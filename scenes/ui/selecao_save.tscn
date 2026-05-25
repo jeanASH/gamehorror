@@ -1,0 +1,242 @@
+[gd_scene format=3 uid="uid://bs4et54nyxwk2"]
+
+[ext_resource type="Script" uid="uid://00mlpii0kxl" path="res://script/selecao_save.gd" id="1_3tmh7"]
+[ext_resource type="AudioStream" uid="uid://chi764sfeowmw" path="res://assets/sounds/Ju-On The Grudge (Wii) - 01 -  Main Menu - Nostalgia Wave (youtube).mp3" id="2_3tmh7"]
+[ext_resource type="Texture2D" uid="uid://bhtpaocu3gpuv" path="res://imagens/save.png" id="3_yh7dh"]
+[ext_resource type="Texture2D" uid="uid://nkhc7k3cwpke" path="res://imagens/savelayout.png" id="4_yh7dh"]
+[ext_resource type="FontFile" uid="uid://b2onqkcwc5y5k" path="res://assets/fonts/Chalk-Regular.ttf" id="6_huy3b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l2d5k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twfph"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sh0td"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w26t8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tmh7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yh7dh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_huy3b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkjfl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vra8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cyn31"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hjch"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhhbb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vil80"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sciay"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ss0xm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tvdjx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ede20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2ew8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhm8b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5igb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_my3xw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_orneb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2b0f"]
+
+[node name="SelecaoSave" type="Control" unique_id=347268048]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 652.0
+script = ExtResource("1_3tmh7")
+musica_da_cena = ExtResource("2_3tmh7")
+
+[node name="Save" type="Sprite2D" parent="." unique_id=1577938595]
+position = Vector2(578.99994, 325.5)
+scale = Vector2(1.1289063, 0.6455078)
+texture = ExtResource("3_yh7dh")
+
+[node name="save" type="Node2D" parent="." unique_id=1170740535]
+
+[node name="TextureRect4" type="TextureRect" parent="save" unique_id=1848484551]
+offset_left = 148.0
+offset_top = 353.0
+offset_right = 554.0
+offset_bottom = 469.0
+texture = ExtResource("4_yh7dh")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="save" unique_id=165711324]
+offset_left = 150.0
+offset_top = 220.0
+offset_right = 556.0
+offset_bottom = 336.0
+texture = ExtResource("4_yh7dh")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="save" unique_id=1326677777]
+offset_left = 152.0
+offset_top = 89.0
+offset_right = 558.0
+offset_bottom = 205.0
+texture = ExtResource("4_yh7dh")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="save" unique_id=881583101]
+offset_left = 618.0
+offset_top = 91.0
+offset_right = 1024.0
+offset_bottom = 207.0
+texture = ExtResource("4_yh7dh")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="save" unique_id=939668132]
+offset_left = 619.0
+offset_top = 225.0
+offset_right = 1025.0
+offset_bottom = 341.0
+texture = ExtResource("4_yh7dh")
+expand_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="save" unique_id=1825510332]
+offset_left = 619.0
+offset_top = 352.0
+offset_right = 1025.0
+offset_bottom = 468.0
+texture = ExtResource("4_yh7dh")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1075290341]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -413.5
+offset_top = 108.0
+offset_right = -133.5
+offset_bottom = 201.0
+grow_horizontal = 2
+
+[node name="Slot1" type="Button" parent="VBoxContainer" unique_id=1260079163]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_huy3b")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l2d5k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_twfph")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sh0td")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w26t8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3tmh7")
+text = "  "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Slot1" unique_id=1317407131]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 278.0
+offset_bottom = 53.0
+
+[node name="Info" type="VBoxContainer" parent="VBoxContainer/Slot1/HBoxContainer" unique_id=92508582]
+layout_mode = 2
+
+[node name="NomeLabel" type="Label" parent="VBoxContainer/Slot1/HBoxContainer/Info" unique_id=421597761]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+theme_override_fonts/font = ExtResource("6_huy3b")
+theme_override_font_sizes/font_size = 30
+
+[node name="Label2" type="Label" parent="VBoxContainer/Slot1/HBoxContainer/Info" unique_id=239949082]
+layout_mode = 2
+
+[node name="BotaoDeletar1" type="Button" parent="VBoxContainer/Slot1" unique_id=1078800004]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 10.0
+offset_right = 391.0
+offset_bottom = 65.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yh7dh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_huy3b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jkjfl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vra8s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cyn31")
+
+[node name="Voltar" type="Button" parent="." unique_id=1471219326]
+modulate = Color(0.033853278, 0.033853278, 0.033853274, 1)
+layout_mode = 0
+offset_left = 845.0
+offset_top = 453.0
+offset_right = 966.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("6_huy3b")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4hjch")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dhhbb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vil80")
+text = "voltar"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1334359545]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 235.0
+offset_right = 488.0
+offset_bottom = 335.0
+
+[node name="Slot2" type="Button" parent="VBoxContainer2" unique_id=1734290225]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_huy3b")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sciay")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ss0xm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tvdjx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ede20")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e2ew8")
+text = " "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/Slot2" unique_id=1332704170]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 265.0
+offset_bottom = 51.0
+
+[node name="Info" type="VBoxContainer" parent="VBoxContainer2/Slot2/HBoxContainer" unique_id=1303612382]
+layout_mode = 2
+
+[node name="NomeLabel" type="Label" parent="VBoxContainer2/Slot2/HBoxContainer/Info" unique_id=42496546]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_huy3b")
+theme_override_font_sizes/font_size = 30
+
+[node name="Label2" type="Label" parent="VBoxContainer2/Slot2/HBoxContainer/Info" unique_id=658778439]
+layout_mode = 2
+
+[node name="BotaoDeletar2" type="Button" parent="VBoxContainer2/Slot2" unique_id=1973362762]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 21.0
+offset_right = 391.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhm8b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5igb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_my3xw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_orneb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e2b0f")
+
+[connection signal="pressed" from="VBoxContainer/Slot1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Slot1/BotaoDeletar1" to="." method="_on_botao_deletar_1_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Slot2" to="." method="_on_slot_2_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Slot2/BotaoDeletar2" to="." method="_on_botao_deletar_2_pressed"]

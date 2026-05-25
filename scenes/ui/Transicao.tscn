@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bhoe50588swdb"]
+
+[ext_resource type="Script" uid="uid://dmd6rsq7qj5kc" path="res://script/transicao.gd" id="1_yw7sj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw7sj"]
+size = Vector2(27.5, 20)
+
+[node name="Transicao" type="Area2D" unique_id=679126984]
+position = Vector2(270, 268)
+script = ExtResource("1_yw7sj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2081867900]
+shape = SubResource("RectangleShape2D_yw7sj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,9 @@
+@echo off
+echo Adicionando arquivos...
+git add .
+echo Criando pacote de salvamento...
+git commit -m "Atualizacao automatica: %date% %time%"
+echo Enviando para o GitHub...
+git push
+echo Tudo pronto! Agora pode relaxar.
+pause

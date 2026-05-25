@@ -1,0 +1,291 @@
+[gd_scene format=3 uid="uid://cxt6jnpunkbkg"]
+
+[ext_resource type="Texture2D" uid="uid://drlpwfon723gt" path="res://imagens/ritual.png" id="1_kxk0t"]
+[ext_resource type="PackedScene" uid="uid://cbg0jou1w7gn6" path="res://assets/sprites/player.tscn" id="2_8a22b"]
+[ext_resource type="PackedScene" uid="uid://bhoe50588swdb" path="res://scenes/ui/Transicao.tscn" id="3_sgq8n"]
+[ext_resource type="Script" uid="uid://bd51q0lk28nu8" path="res://script/puzzle/pilar_ritual_1.gd" id="4_pl80v"]
+[ext_resource type="Texture2D" uid="uid://4wguwfn8gnpy" path="res://imagens/pilastra.png" id="5_ji3j4"]
+[ext_resource type="Texture2D" uid="uid://cnxllgkiwf3da" path="res://imagens/laçov.png" id="6_678kw"]
+[ext_resource type="AudioStream" uid="uid://bxvpy07to1rae" path="res://assets/sounds/grito.ogg" id="6_vbc25"]
+[ext_resource type="Script" uid="uid://boa3sel5yrvbt" path="res://script/puzzle/pilar_ritual_2.gd" id="7_1unth"]
+[ext_resource type="Texture2D" uid="uid://b4mk30xvcxgdq" path="res://imagens/fita.png" id="8_rjpbv"]
+[ext_resource type="Script" uid="uid://bf0inem8srrwf" path="res://script/puzzle/pilar_ritual_3.gd" id="9_rjpbv"]
+[ext_resource type="Texture2D" uid="uid://43s7n0g26g1t" path="res://imagens/sapato.png" id="9_wbtt6"]
+[ext_resource type="Texture2D" uid="uid://brww73rpc0twm" path="res://imagens/diario.png" id="10_vbc25"]
+[ext_resource type="Script" uid="uid://b5xhm26snqlu5" path="res://script/puzzle/pilar_ritual_4.gd" id="11_wbtt6"]
+[ext_resource type="Script" uid="uid://dsolkj234w20b" path="res://script/puzzle/missao.gd" id="16_vbc25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da0sb"]
+size = Vector2(87, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujtin"]
+size = Vector2(62, 127.25)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wbtt6"]
+a = Vector2(47, 487)
+b = Vector2(-141, 487)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vbc25"]
+a = Vector2(587, 464)
+b = Vector2(53, 465)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7rq0p"]
+a = Vector2(575, -222)
+b = Vector2(580, 309)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o88dv"]
+a = Vector2(306, -247)
+b = Vector2(577, -241)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2ldfr"]
+a = Vector2(-510, -282)
+b = Vector2(274, -283)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p11xe"]
+a = Vector2(-362, 469)
+b = Vector2(-150, 467)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_su0hl"]
+a = Vector2(-362, 366)
+b = Vector2(-360, 462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ul8kx"]
+size = Vector2(157, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk21q"]
+size = Vector2(47, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uq0s"]
+size = Vector2(148, 211)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_oq4a7"]
+a = Vector2(-560, -250)
+b = Vector2(-573, 237)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv2pi"]
+size = Vector2(52, 143.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ujff"]
+radius = 24.0
+height = 120.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifwdk"]
+size = Vector2(24, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njion"]
+size = Vector2(20, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rq0p"]
+size = Vector2(183, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbc25"]
+size = Vector2(20, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o88dv"]
+size = Vector2(20, 92)
+
+[node name="Ritual" type="Node2D" unique_id=1850235480]
+
+[node name="Ritual" type="Sprite2D" parent="." unique_id=776831978]
+position = Vector2(614, 552)
+scale = Vector2(1.1923828, 1.0722656)
+texture = ExtResource("1_kxk0t")
+
+[node name="Transicao" parent="." unique_id=1169994949 instance=ExtResource("3_sgq8n")]
+position = Vector2(575, 1003)
+cena_destino = "uid://d3jld4hq8ahe2"
+nome_do_spawn_destino = "Ritual"
+
+[node name="PilarRitual1" type="Area2D" parent="." unique_id=538326832]
+position = Vector2(483, 490)
+script = ExtResource("4_pl80v")
+id_item_necessario = "laço"
+nome_item_amigavel = "laço"
+
+[node name="SpritePilar" type="Sprite2D" parent="PilarRitual1" unique_id=629238930]
+position = Vector2(6.0000005, -48.000004)
+scale = Vector2(0.8738533, 0.84375006)
+texture = ExtResource("5_ji3j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PilarRitual1" unique_id=359901985]
+position = Vector2(3.5, -8)
+shape = SubResource("RectangleShape2D_da0sb")
+
+[node name="SpriteItem" type="Sprite2D" parent="PilarRitual1" unique_id=1697274218]
+position = Vector2(5, -88.25001)
+scale = Vector2(0.13, 0.10099997)
+texture = ExtResource("6_678kw")
+
+[node name="grito" type="AudioStreamPlayer" parent="PilarRitual1" unique_id=736740628]
+stream = ExtResource("6_vbc25")
+
+[node name="PilarRitual2" type="Area2D" parent="." unique_id=298492588]
+position = Vector2(486, 484)
+script = ExtResource("7_1unth")
+id_item_necessario = "fita"
+nome_item_amigavel = "fita"
+
+[node name="SpritePilar" type="Sprite2D" parent="PilarRitual2" unique_id=466524957]
+position = Vector2(237.99998, -43.000004)
+scale = Vector2(0.8738533, 0.84375006)
+texture = ExtResource("5_ji3j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PilarRitual2" unique_id=803361672]
+position = Vector2(235, -7)
+shape = SubResource("RectangleShape2D_da0sb")
+
+[node name="grito" type="AudioStreamPlayer" parent="PilarRitual2" unique_id=2043590742]
+stream = ExtResource("6_vbc25")
+
+[node name="SpriteItem" type="Sprite2D" parent="PilarRitual2" unique_id=918976778]
+position = Vector2(233.50005, -86.99549)
+scale = Vector2(0.11170215, 0.10405206)
+texture = ExtResource("8_rjpbv")
+
+[node name="PilarRitual3" type="Area2D" parent="." unique_id=899175095]
+position = Vector2(483, 690)
+script = ExtResource("9_rjpbv")
+id_item_necessario = "sapato"
+nome_item_amigavel = "sapato"
+
+[node name="SpritePilar" type="Sprite2D" parent="PilarRitual3" unique_id=1124339688]
+position = Vector2(237.99998, -43.000004)
+scale = Vector2(0.8738533, 0.84375006)
+texture = ExtResource("5_ji3j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PilarRitual3" unique_id=350563112]
+position = Vector2(235, -7)
+shape = SubResource("RectangleShape2D_da0sb")
+
+[node name="grito" type="AudioStreamPlayer" parent="PilarRitual3" unique_id=458986154]
+stream = ExtResource("6_vbc25")
+
+[node name="SpriteItem" type="Sprite2D" parent="PilarRitual3" unique_id=113681542]
+position = Vector2(237.5, -88.00002)
+scale = Vector2(0.14199995, 0.10000003)
+texture = ExtResource("9_wbtt6")
+
+[node name="PilarRitual4" type="Area2D" parent="." unique_id=12649402]
+position = Vector2(255, 692)
+script = ExtResource("11_wbtt6")
+id_item_necessario = "caderno"
+nome_item_amigavel = "caderno"
+
+[node name="SpritePilar" type="Sprite2D" parent="PilarRitual4" unique_id=251293756]
+position = Vector2(237.99998, -43.000004)
+scale = Vector2(0.8738533, 0.84375006)
+texture = ExtResource("5_ji3j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PilarRitual4" unique_id=215480449]
+position = Vector2(235, -7)
+shape = SubResource("RectangleShape2D_da0sb")
+
+[node name="grito" type="AudioStreamPlayer" parent="PilarRitual4" unique_id=206831070]
+stream = ExtResource("6_vbc25")
+
+[node name="SpriteItem" type="Sprite2D" parent="PilarRitual4" unique_id=512475868]
+position = Vector2(235.5, -90.00001)
+scale = Vector2(0.12999998, 0.10099997)
+texture = ExtResource("10_vbc25")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1393580467]
+position = Vector2(609, 570)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=201719116]
+position = Vector2(-121, -111)
+shape = SubResource("RectangleShape2D_ujtin")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1505787540]
+position = Vector2(113, -113)
+shape = SubResource("RectangleShape2D_ujtin")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=409681623]
+position = Vector2(110, 91.625)
+shape = SubResource("RectangleShape2D_ujtin")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1967744510]
+position = Vector2(-117, 94)
+shape = SubResource("RectangleShape2D_ujtin")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=79852721]
+shape = SubResource("SegmentShape2D_wbtt6")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=580881392]
+shape = SubResource("SegmentShape2D_vbc25")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1045704059]
+shape = SubResource("SegmentShape2D_7rq0p")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=198127113]
+shape = SubResource("SegmentShape2D_o88dv")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=952076738]
+shape = SubResource("SegmentShape2D_2ldfr")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=1584459562]
+shape = SubResource("SegmentShape2D_p11xe")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=1782725015]
+shape = SubResource("SegmentShape2D_su0hl")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" unique_id=1750210765]
+position = Vector2(-467.5, 38)
+shape = SubResource("RectangleShape2D_ul8kx")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=1859858212]
+position = Vector2(-336.5, 102.5)
+shape = SubResource("RectangleShape2D_xk21q")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=616242177]
+position = Vector2(-499, 355.5)
+shape = SubResource("RectangleShape2D_3uq0s")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D" unique_id=224784978]
+shape = SubResource("SegmentShape2D_oq4a7")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D" unique_id=1394836653]
+position = Vector2(553, 402.75)
+shape = SubResource("RectangleShape2D_gv2pi")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D" unique_id=1932692348]
+position = Vector2(518, 225)
+shape = SubResource("CapsuleShape2D_0ujff")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D" unique_id=935679017]
+position = Vector2(140, 409.5)
+shape = SubResource("RectangleShape2D_ifwdk")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D" unique_id=659039377]
+position = Vector2(-196, 421)
+shape = SubResource("RectangleShape2D_njion")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=637860502]
+color = Color(0.3515629, 0.3515629, 0.35156286, 1)
+
+[node name="Player" parent="." unique_id=1096986461 node_paths=PackedStringArray("cenario_referencia") instance=ExtResource("2_8a22b")]
+position = Vector2(561, 1013.00006)
+cenario_referencia = NodePath("../Ritual")
+ativar_profundidade = true
+linha_longe_y = 0.0
+tamanho_longe = 15.0
+linha_perto_y = 1100.0
+tamanho_perto = 15.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1657283584]
+position = Vector2(578, 955)
+script = ExtResource("16_vbc25")
+id_nova_missao = "objetos"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1910794069]
+position = Vector2(-12.5, 10)
+shape = SubResource("RectangleShape2D_7rq0p")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=40028416]
+position = Vector2(-94, 44)
+shape = SubResource("RectangleShape2D_vbc25")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D" unique_id=795088879]
+position = Vector2(69, 45)
+shape = SubResource("RectangleShape2D_o88dv")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

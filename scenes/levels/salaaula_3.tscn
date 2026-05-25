@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=3 uid="uid://femoi88y1lk5"]
+
+[ext_resource type="Texture2D" uid="uid://w8dn5kp2fqwk" path="res://imagens/sala.jpeg" id="1_t56wq"]
+[ext_resource type="PackedScene" uid="uid://bhoe50588swdb" path="res://scenes/ui/Transicao.tscn" id="2_mb8ao"]
+[ext_resource type="PackedScene" uid="uid://cbg0jou1w7gn6" path="res://assets/sprites/player.tscn" id="3_iufsx"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bg00f"]
+a = Vector2(-13, 166)
+b = Vector2(-305, 169)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ybgu8"]
+a = Vector2(-6, 138)
+b = Vector2(381, 140)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cve77"]
+a = Vector2(382, -592)
+b = Vector2(381, 140)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0qce3"]
+a = Vector2(-470, -580)
+b = Vector2(381, -580)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55isj"]
+size = Vector2(227, 73)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tn8fj"]
+a = Vector2(-716, 147)
+b = Vector2(-318, 149)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6igos"]
+a = Vector2(-716, 137)
+b = Vector2(-718, -544)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60h5q"]
+size = Vector2(228, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ind0g"]
+size = Vector2(198.5, 310)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q05ry"]
+size = Vector2(198, 311)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn2gd"]
+size = Vector2(210.5, 301)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erka5"]
+size = Vector2(37, 104)
+
+[node name="salaaula3" type="Node2D"]
+
+[node name="sala" type="Node2D" parent="."]
+
+[node name="Sala" type="Sprite2D" parent="sala"]
+position = Vector2(575, 547)
+scale = Vector2(1.5251324, 1.2592593)
+texture = ExtResource("1_t56wq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="sala"]
+position = Vector2(750, 934)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sala/StaticBody2D"]
+shape = SubResource("SegmentShape2D_bg00f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="sala/StaticBody2D"]
+shape = SubResource("SegmentShape2D_ybgu8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="sala/StaticBody2D"]
+shape = SubResource("SegmentShape2D_cve77")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="sala/StaticBody2D"]
+shape = SubResource("SegmentShape2D_0qce3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="sala/StaticBody2D"]
+position = Vector2(-150.5, -529.5)
+shape = SubResource("RectangleShape2D_55isj")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="sala/StaticBody2D"]
+shape = SubResource("SegmentShape2D_tn8fj")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="sala/StaticBody2D"]
+shape = SubResource("SegmentShape2D_6igos")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="sala/StaticBody2D"]
+position = Vector2(-602, -598)
+shape = SubResource("RectangleShape2D_60h5q")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="sala/StaticBody2D"]
+position = Vector2(136.75, -236)
+shape = SubResource("RectangleShape2D_ind0g")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="sala/StaticBody2D"]
+position = Vector2(-151, -233.5)
+shape = SubResource("RectangleShape2D_q05ry")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="sala/StaticBody2D"]
+position = Vector2(-463.25, -235.5)
+shape = SubResource("RectangleShape2D_jn2gd")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="sala/StaticBody2D"]
+position = Vector2(-693.5, 63)
+shape = SubResource("RectangleShape2D_erka5")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="sala"]
+color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+
+[node name="Transicao" parent="sala" instance=ExtResource("2_mb8ao")]
+position = Vector2(585, 1055)
+cena_destino = "uid://daeth0wofotru"
+nome_do_spawn_destino = "salaaula3"
+
+[node name="Player" parent="sala" node_paths=PackedStringArray("cenario_referencia") instance=ExtResource("3_iufsx")]
+position = Vector2(597, 1006.00006)
+cenario_referencia = NodePath("../Sala")
+ativar_profundidade = true
+linha_longe_y = 0.0
+tamanho_longe = 20.0
+linha_perto_y = 1100.0
+tamanho_perto = 20.0

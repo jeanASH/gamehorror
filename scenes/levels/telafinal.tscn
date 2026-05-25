@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://2s5xottdlxkg"]
+
+[ext_resource type="Texture2D" uid="uid://nqmuj2lq4v6q" path="res://imagens/telafinal.png" id="1_aoav6"]
+[ext_resource type="Script" uid="uid://nvjinnqf8vif" path="res://script/telafinal.gd" id="1_gtn03"]
+[ext_resource type="FontFile" uid="uid://b2onqkcwc5y5k" path="res://assets/fonts/Chalk-Regular.ttf" id="3_mmo1v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sv4bp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23545"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_srj6q"]
+
+[node name="telafinal" type="Control" unique_id=1638944673]
+layout_mode = 3
+anchor_right = 0.892
+anchor_bottom = 1.588
+offset_left = -2.0
+offset_top = -3.0
+offset_right = -1029.584
+offset_bottom = -1032.024
+script = ExtResource("1_gtn03")
+
+[node name="Telafinal" type="Sprite2D" parent="." unique_id=861374964]
+position = Vector2(579.5, 328.99997)
+scale = Vector2(1.1298828, 0.6386718)
+texture = ExtResource("1_aoav6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1615297999]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 617.0
+offset_right = 860.0
+offset_bottom = 636.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1861972091]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 593.0
+offset_right = 657.0
+offset_bottom = 646.0
+theme_override_fonts/font = ExtResource("3_mmo1v")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sv4bp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_23545")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_srj6q")
+text = "Sair"

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://0k51mcw64r76"]
+
+[ext_resource type="Script" uid="uid://bov0lknw8mewu" path="res://script/puzzle/terrafofa.gd" id="1_wu5me"]
+[ext_resource type="Texture2D" uid="uid://cxe2d02c751tk" path="res://imagens/montedeterra.png" id="2_5crgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ke4c"]
+size = Vector2(55, 48)
+
+[node name="terrafofa" type="Area2D" unique_id=1429523805]
+script = ExtResource("1_wu5me")
+id_item_ganho = "sapato"
+nome_item_ganho = "sapato"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=22340267]
+modulate = Color(0.51850265, 0.51850265, 0.51850265, 1)
+position = Vector2(13.000008, 9)
+scale = Vector2(0.9215117, 0.43168607)
+texture = ExtResource("2_5crgw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=263988749]
+visible = false
+position = Vector2(17.5, 14)
+shape = SubResource("RectangleShape2D_1ke4c")

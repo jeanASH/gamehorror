@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://btjf3w5xmksu6"]
+
+[ext_resource type="Script" uid="uid://bmnd2p7wjc613" path="res://script/MapaScreen.gd" id="1_5ek3c"]
+[ext_resource type="Texture2D" uid="uid://54bwfqsjwl0d" path="res://imagens/mapa.jpeg" id="2_5ek3c"]
+[ext_resource type="FontFile" uid="uid://b2onqkcwc5y5k" path="res://assets/fonts/Chalk-Regular.ttf" id="4_k16km"]
+[ext_resource type="Texture2D" uid="uid://di0s3ngv1pkv6" path="res://imagens/image-removebg-preview (3).png" id="7_jawwy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ek3c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ex8ba"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gpbhb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jawwy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k16km"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05abr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_db2vl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvo3l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxedr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s18tt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edxlo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnus1"]
+
+[node name="MapaScreen" type="Control" unique_id=1206155496]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_5ek3c")
+
+[node name="Mapa" type="Sprite2D" parent="." unique_id=1613118467]
+position = Vector2(579, 323.50003)
+scale = Vector2(1.1328125, 0.6533204)
+texture = ExtResource("2_5ek3c")
+
+[node name="Node2D" type="Control" parent="." unique_id=1990574041]
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node2D" unique_id=857997491]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 1155.0
+offset_bottom = 658.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1593942191]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 250.0
+offset_right = 1144.0
+offset_bottom = 283.0
+theme_override_fonts/font = ExtResource("4_k16km")
+theme_override_font_sizes/font_size = 40
+text = "Laboratorio"
+
+[node name="ImageRemovebgPreview(3)" type="TextureRect" parent="Node2D" unique_id=2063716981]
+layout_mode = 0
+offset_left = 977.0
+offset_top = 86.00001
+offset_right = 1408.2324
+offset_bottom = 461.74677
+scale = Vector2(0.42900288, 0.48170745)
+mouse_filter = 2
+texture = ExtResource("7_jawwy")
+
+[node name="ImageRemovebgPreview(3)2" type="Sprite2D" parent="Node2D" unique_id=1632202781]
+position = Vector2(719.5, 177.5)
+scale = Vector2(0.5468278, 0.4847561)
+texture = ExtResource("7_jawwy")
+
+[node name="ImageRemovebgPreview(3)3" type="Sprite2D" parent="Node2D" unique_id=1498007567]
+position = Vector2(176, 337)
+scale = Vector2(0.5438067, 0.48170733)
+texture = ExtResource("7_jawwy")
+
+[node name="Label2" type="Label" parent="Node2D" unique_id=146951872]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 274.0
+offset_right = 864.0
+offset_bottom = 323.0
+theme_override_fonts/font = ExtResource("4_k16km")
+theme_override_font_sizes/font_size = 34
+text = "Estacionamento"
+
+[node name="Label3" type="Label" parent="Node2D" unique_id=1429141161]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 416.0
+offset_right = 267.0
+offset_bottom = 449.0
+theme_override_fonts/font = ExtResource("4_k16km")
+theme_override_font_sizes/font_size = 40
+text = "Biblioteca"
+
+[node name="ImageRemovebgPreview(3)4" type="Sprite2D" parent="Node2D" unique_id=954410076]
+position = Vector2(524.5, 333.5)
+scale = Vector2(0.37764344, 0.36280486)
+texture = ExtResource("7_jawwy")
+
+[node name="Label2" type="Label" parent="Node2D/ImageRemovebgPreview(3)4" unique_id=1305352486]
+offset_left = -197.276
+offset_top = 161.2437
+offset_right = 155.724
+offset_bottom = 213.61345
+theme_override_fonts/font = ExtResource("4_k16km")
+theme_override_font_sizes/font_size = 70
+text = "Lanchonete"
+
+[node name="PontosParent" type="Node2D" parent="." unique_id=2019789057]
+position = Vector2(-3, 0)
+
+[node name="PontoBiblioteca" type="Control" parent="PontosParent" unique_id=578295054]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 95.0
+offset_top = 265.0
+offset_right = 255.0
+offset_bottom = 407.0
+mouse_filter = 2
+
+[node name="BibliotecaBotao" type="Button" parent="PontosParent/PontoBiblioteca" unique_id=2016311388]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 156.0
+offset_bottom = 129.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ek3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ex8ba")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gpbhb")
+
+[node name="PontoEstacionamento" type="Control" parent="PontosParent" unique_id=1389220462]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 643.0
+offset_top = 110.0
+offset_right = 795.0
+offset_bottom = 253.0
+mouse_filter = 2
+
+[node name="EstacionamentoBotao" type="Button" parent="PontosParent/PontoEstacionamento" unique_id=1840383876]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -3.0
+offset_top = -4.0
+offset_right = 164.0
+offset_bottom = 143.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jawwy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_k16km")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_05abr")
+
+[node name="PontoLaboratorio" type="Control" parent="PontosParent" unique_id=541517799]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 997.0
+offset_top = 102.0
+offset_right = 1132.0
+offset_bottom = 258.0
+mouse_filter = 2
+
+[node name="LaboratorioBotao" type="Button" parent="PontosParent/PontoLaboratorio" unique_id=193386291]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 137.0
+offset_bottom = 146.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_db2vl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xvo3l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sxedr")
+
+[node name="PontoLanchonete" type="Control" parent="PontosParent" unique_id=1715603214]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 472.0
+offset_top = 278.0
+offset_right = 585.0
+offset_bottom = 391.0
+
+[node name="LanchoneteBotao" type="Button" parent="PontosParent/PontoLanchonete" unique_id=255829646]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 116.0
+offset_bottom = 114.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s18tt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_edxlo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gnus1")
+
+[connection signal="pressed" from="PontosParent/PontoBiblioteca/BibliotecaBotao" to="." method="_on_biblioteca_pressed"]
+[connection signal="pressed" from="PontosParent/PontoEstacionamento/EstacionamentoBotao" to="." method="_on_estacionamento_pressed"]
+[connection signal="pressed" from="PontosParent/PontoLaboratorio/LaboratorioBotao" to="." method="_on_laboratorio_pressed"]
+[connection signal="pressed" from="PontosParent/PontoLanchonete/LanchoneteBotao" to="." method="_on_lanchonete_botao_pressed"]

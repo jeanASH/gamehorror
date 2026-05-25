@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b57vh3mcc58st"]
+
+[ext_resource type="Script" uid="uid://42rpnua5ere8" path="res://script/into_video.gd" id="1_11np8"]
+[ext_resource type="VideoStream" uid="uid://dqw3herl0e24t" path="res://imagens/Vídeo_de_Ônibus_Pronto.ogv" id="2_mf1i5"]
+
+[node name="Introbus" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_11np8")
+cena_da_rua_real = "uid://b7c4w1nxpbpq7"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stream = ExtResource("2_mf1i5")
+autoplay = true
+expand = true

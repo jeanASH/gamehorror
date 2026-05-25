@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqoyf52pjjbm5"]
+
+[ext_resource type="Script" uid="uid://dfoddlhhthcht" path="res://script/global/caixa_dialogo_global.gd" id="1_cqiej"]
+[ext_resource type="FontFile" uid="uid://b2onqkcwc5y5k" path="res://assets/fonts/Chalk-Regular.ttf" id="2_xafk6"]
+[ext_resource type="AudioStream" uid="uid://cw33xtddk34gx" path="res://assets/sounds/diologue1.wav" id="3_ojk51"]
+
+[node name="CaixaDialogoGlobal" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_cqiej")
+
+[node name="PainelFundo" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.887
+anchor_right = 0.508
+anchor_bottom = 0.887
+offset_left = -266.216
+offset_top = -15.109985
+offset_right = 238.784
+offset_bottom = 53.890015
+color = Color(0.0066828458, 0.0066828458, 0.0066828458, 0.34800002)
+
+[node name="Retrato" type="TextureRect" parent="PainelFundo"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 63.0
+offset_bottom = 69.0
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextoLabel" type="Label" parent="PainelFundo"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 2.0
+offset_right = 504.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("2_xafk6")
+autowrap_mode = 2
+
+[node name="IconeContinuar" type="Label" parent="PainelFundo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 234.5
+offset_top = 17.833984
+offset_right = 259.5
+offset_bottom = 39.833984
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_xafk6")
+theme_override_font_sizes/font_size = 27
+text = "E"
+
+[node name="NomeLabel" type="Label" parent="PainelFundo"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -22.0
+offset_right = 46.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(1, 0.06666667, 0.14901961, 1)
+
+[node name="SomDigitacao" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ojk51")
+bus = &"UI"
+
+[node name="TimerDigitacao" type="Timer" parent="."]

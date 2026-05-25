@@ -1,0 +1,243 @@
+[gd_scene format=3 uid="uid://d3jld4hq8ahe2"]
+
+[ext_resource type="Script" uid="uid://djyvs0q7nti7e" path="res://script/interior_biblioteca.gd" id="1_ecmq4"]
+[ext_resource type="AudioStream" uid="uid://bjtd41mqgsqiy" path="res://assets/sounds/soundtrack-biblioteca.ogg" id="2_tylvg"]
+[ext_resource type="PackedScene" uid="uid://cbg0jou1w7gn6" path="res://assets/sprites/player.tscn" id="2_uy464"]
+[ext_resource type="PackedScene" uid="uid://bhoe50588swdb" path="res://scenes/ui/Transicao.tscn" id="3_fgjwg"]
+[ext_resource type="AudioStream" uid="uid://c75fjrisruuva" path="res://assets/sounds/madeira2.wav" id="3_vuyf2"]
+[ext_resource type="Texture2D" uid="uid://cy2galch8sih0" path="res://imagens/bibliotecaescurod.jpg" id="4_vuyf2"]
+[ext_resource type="PackedScene" uid="uid://t01ix87lfotk" path="res://scenes/ui/puzzle_estante_ui.tscn" id="6_lk7ma"]
+[ext_resource type="Script" uid="uid://cq1ap7bdjf1fm" path="res://script/puzzle/interacao_estante.gd" id="7_cuw0f"]
+[ext_resource type="PackedScene" uid="uid://d0c2vgp8u33e0" path="res://scenes/ui/objeto_interativo.tscn" id="10_ecmq4"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_iw6fw"]
+a = Vector2(-35, 247)
+b = Vector2(-36, 183)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uy464"]
+a = Vector2(-236, 247)
+b = Vector2(-34, 247)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fgjwg"]
+a = Vector2(-243, 179)
+b = Vector2(-243, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lk7ma"]
+size = Vector2(25, 372)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cuw0f"]
+a = Vector2(-26, 183)
+b = Vector2(783, 182)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p3x72"]
+a = Vector2(788, 170)
+b = Vector2(788, -505)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vuyf2"]
+a = Vector2(-610, 176)
+b = Vector2(-240, 178)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ecmq4"]
+a = Vector2(-611, 174)
+b = Vector2(-612, -534)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tylvg"]
+size = Vector2(348, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftsmt"]
+size = Vector2(368, 405)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnpld"]
+size = Vector2(819, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgaf5"]
+size = Vector2(1422, 211)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khwus"]
+size = Vector2(336, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sly8"]
+size = Vector2(210, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odyh5"]
+size = Vector2(133, 153.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuyf2"]
+size = Vector2(20, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecmq4"]
+size = Vector2(20, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_357pp"]
+size = Vector2(69, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eabkq"]
+size = Vector2(28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bovgq"]
+size = Vector2(40, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3x72"]
+size = Vector2(39, 58)
+
+[node name="InteriorBiblioteca" type="Node2D" unique_id=786603275]
+script = ExtResource("1_ecmq4")
+som_drone_vazio = ExtResource("2_tylvg")
+som_madeira_rangendo = ExtResource("3_vuyf2")
+
+[node name="Bibliotecaescurod" type="Sprite2D" parent="." unique_id=736448576]
+position = Vector2(774.99994, 514.5)
+scale = Vector2(0.61075956, 0.60154396)
+texture = ExtResource("4_vuyf2")
+
+[node name="Transicao" parent="." unique_id=847453205 instance=ExtResource("3_fgjwg")]
+position = Vector2(559, 998)
+cena_destino = "uid://cghsijsr1ucxm"
+nome_do_spawn_destino = "entradaB"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=174726682]
+position = Vector2(690, 773)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=632594141]
+shape = SubResource("SegmentShape2D_iw6fw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1222058929]
+shape = SubResource("SegmentShape2D_uy464")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=142830318]
+shape = SubResource("SegmentShape2D_fgjwg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1499673476]
+position = Vector2(-19.5, -176)
+shape = SubResource("RectangleShape2D_lk7ma")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=685459303]
+shape = SubResource("SegmentShape2D_cuw0f")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=110299227]
+shape = SubResource("SegmentShape2D_p3x72")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1223337719]
+shape = SubResource("SegmentShape2D_vuyf2")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1212126205]
+shape = SubResource("SegmentShape2D_ecmq4")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=2096867519]
+position = Vector2(-439, -95)
+shape = SubResource("RectangleShape2D_tylvg")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=973120289]
+position = Vector2(-429, -192.5)
+shape = SubResource("RectangleShape2D_ftsmt")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=1137974551]
+position = Vector2(377.5, -293)
+shape = SubResource("RectangleShape2D_fnpld")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" unique_id=209295426]
+position = Vector2(83, -617.5)
+shape = SubResource("RectangleShape2D_pgaf5")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=1276279736]
+position = Vector2(-419, -495)
+shape = SubResource("RectangleShape2D_khwus")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=1070769325]
+position = Vector2(679, -502.5)
+shape = SubResource("RectangleShape2D_3sly8")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D" unique_id=426647092]
+position = Vector2(166.5, -48.5)
+shape = SubResource("RectangleShape2D_odyh5")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D" unique_id=1645362587]
+position = Vector2(428, -42.25)
+shape = SubResource("RectangleShape2D_odyh5")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D" unique_id=419331423]
+position = Vector2(658, -55)
+shape = SubResource("RectangleShape2D_odyh5")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D" unique_id=1455803545]
+position = Vector2(-2, 146)
+shape = SubResource("RectangleShape2D_vuyf2")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D" unique_id=1088813132]
+position = Vector2(78, 146)
+shape = SubResource("RectangleShape2D_ecmq4")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D" unique_id=774905709]
+position = Vector2(746.5, -418.5)
+shape = SubResource("RectangleShape2D_357pp")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D" unique_id=544153747]
+position = Vector2(4, -174)
+shape = SubResource("RectangleShape2D_eabkq")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D" unique_id=1027407703]
+position = Vector2(-592, 112)
+shape = SubResource("RectangleShape2D_bovgq")
+
+[node name="Transicao2" parent="." unique_id=788782250 instance=ExtResource("3_fgjwg")]
+position = Vector2(738, 268)
+cena_destino = "uid://dntd6vfhav34e"
+
+[node name="sala1" type="Marker2D" parent="." unique_id=1169291236]
+position = Vector2(740, 297)
+
+[node name="sala2" type="Marker2D" parent="." unique_id=662104383]
+position = Vector2(1116, 285)
+
+[node name="Player" parent="." unique_id=693193008 node_paths=PackedStringArray("cenario_referencia") instance=ExtResource("2_uy464")]
+position = Vector2(569, 940)
+cenario_referencia = NodePath("../Bibliotecaescurod")
+ativar_profundidade = true
+linha_longe_y = 250.0
+tamanho_longe = 10.0
+linha_perto_y = 1000.0
+tamanho_perto = 10.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1256142805]
+color = Color(0.17254902, 0.17254902, 0.17254902, 1)
+
+[node name="PuzzleEstanteUI" parent="." unique_id=1506171885 instance=ExtResource("6_lk7ma")]
+visible = false
+
+[node name="InteracaoEstante" type="Area2D" parent="." unique_id=1045609287]
+position = Vector2(1269, 526)
+script = ExtResource("7_cuw0f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteracaoEstante" unique_id=1061849233]
+position = Vector2(95.5, 19)
+shape = SubResource("RectangleShape2D_p3x72")
+
+[node name="TimerMadeira" type="Timer" parent="." unique_id=489115454]
+one_shot = true
+
+[node name="Transicao4" parent="." unique_id=249081938 instance=ExtResource("3_fgjwg")]
+position = Vector2(557, 268)
+cena_destino = "uid://cxt6jnpunkbkg"
+precisa_de_item = true
+id_do_item_necessario = "Chave"
+
+[node name="Ritual" type="Marker2D" parent="." unique_id=1742385982]
+position = Vector2(556, 290)
+
+[node name="ObjetoInterativo" parent="." unique_id=1293549379 instance=ExtResource("10_ecmq4")]
+position = Vector2(1112, 260)
+pensamento = true
+frases_padrao = Array[String](["Até quando essa sala vai ficar assim sem concerto ?"])
+
+[node name="ObjetoInterativo2" parent="." unique_id=919223839 instance=ExtResource("10_ecmq4")]
+position = Vector2(933, 260)
+pensamento = true
+frases_padrao = Array[String](["Essa sala ta cheia de tinta."])
+
+[node name="ObjetoInterativo3" parent="." unique_id=2106075106 instance=ExtResource("10_ecmq4")]
+position = Vector2(813, 555)
+pensamento = true
+frases_padrao = Array[String](["\"Livros de Bioquímica\" ", "Tem gente que lê isso ?"])
+
+[connection signal="body_entered" from="InteracaoEstante" to="InteracaoEstante" method="_on_body_entered"]
+[connection signal="body_exited" from="InteracaoEstante" to="InteracaoEstante" method="_on_body_exited"]

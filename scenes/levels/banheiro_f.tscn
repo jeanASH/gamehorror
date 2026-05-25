@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bbdv0c36hfxdc"]
+
+[ext_resource type="Script" uid="uid://bhtl5ajea5utd" path="res://script/banheiro_m.gd" id="1_8xadu"]
+[ext_resource type="Texture2D" uid="uid://h0wu0sqs383h" path="res://imagens/banheirof.png" id="1_f8uh0"]
+[ext_resource type="PackedScene" uid="uid://cbg0jou1w7gn6" path="res://assets/sprites/player.tscn" id="2_1yp5e"]
+[ext_resource type="AudioStream" uid="uid://h3bly0so0k22" path="res://assets/sounds/som-do-banheiro.ogg" id="2_8xadu"]
+[ext_resource type="PackedScene" uid="uid://bhoe50588swdb" path="res://scenes/ui/Transicao.tscn" id="3_8xadu"]
+[ext_resource type="PackedScene" uid="uid://himfcg14ppfc" path="res://scenes/ui/mochila/item_base.tscn" id="4_ixxh7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixxh7"]
+size = Vector2(520, 604)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0mul8"]
+a = Vector2(567, 150)
+b = Vector2(189, 157)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4bo7p"]
+a = Vector2(-428, 144)
+b = Vector2(-61, 145)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mqx7t"]
+a = Vector2(-378, -494)
+b = Vector2(-423, 136)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_coovj"]
+a = Vector2(559, -203)
+b = Vector2(561, 150)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ctnxh"]
+a = Vector2(-217, -445)
+b = Vector2(108, -452)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_l4vme"]
+a = Vector2(-243, -483)
+b = Vector2(-376, -490)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3i7m"]
+size = Vector2(76.5, 85)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8xadu"]
+a = Vector2(194, 181)
+b = Vector2(-20, 184)
+
+[node name="banheiroF" type="Node2D" unique_id=90194937]
+script = ExtResource("1_8xadu")
+banheiro = ExtResource("2_8xadu")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1708860636]
+color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=299866796]
+offset_left = -94.0
+offset_top = -60.0
+offset_right = 1282.0
+offset_bottom = 1176.0
+color = Color(0, 0, 0, 1)
+
+[node name="Banheirof" type="Sprite2D" parent="." unique_id=1706502214]
+position = Vector2(512, 515)
+texture = ExtResource("1_f8uh0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1425540318]
+position = Vector2(452, 775)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2064917310]
+position = Vector2(371, -400)
+shape = SubResource("RectangleShape2D_ixxh7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=486640792]
+shape = SubResource("SegmentShape2D_0mul8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1126220515]
+shape = SubResource("SegmentShape2D_4bo7p")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1053988742]
+shape = SubResource("SegmentShape2D_mqx7t")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1049963320]
+shape = SubResource("SegmentShape2D_coovj")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=574684490]
+shape = SubResource("SegmentShape2D_ctnxh")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=271840925]
+shape = SubResource("SegmentShape2D_l4vme")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=489983440]
+position = Vector2(502.25, 95.5)
+shape = SubResource("RectangleShape2D_g3i7m")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=131292839]
+shape = SubResource("SegmentShape2D_8xadu")
+
+[node name="ItemBase" parent="StaticBody2D" unique_id=989692357 instance=ExtResource("4_ixxh7")]
+position = Vector2(-104, -445)
+id_unico_do_item = "fita"
+nome_no_inventario = "fita"
+frases_ao_pegar = Array[String](["Humm o vidro ta meio torto ? o que tem aqui atras ?", "\"Você achou uma fita.\""])
+
+[node name="Player" parent="." unique_id=631720468 node_paths=PackedStringArray("cenario_referencia") instance=ExtResource("2_1yp5e")]
+position = Vector2(523, 847)
+cenario_referencia = NodePath("../Banheirof")
+ativar_profundidade = true
+linha_longe_y = 0.0
+tamanho_longe = 20.0
+linha_perto_y = 100000.0
+tamanho_perto = 20.0
+
+[node name="Transicao" parent="." unique_id=1287531965 instance=ExtResource("3_8xadu")]
+position = Vector2(526, 931)
+cena_destino = "uid://daeth0wofotru"
+nome_do_spawn_destino = "banheirof"

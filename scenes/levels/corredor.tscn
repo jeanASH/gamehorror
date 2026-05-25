@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://daeth0wofotru"]
+
+[ext_resource type="Script" uid="uid://bg1dlcadq4jt8" path="res://script/corredorolimpo.gd" id="1_xgnog"]
+[ext_resource type="AudioStream" uid="uid://dp5cn6d83oq0h" path="res://assets/sounds/soundtrack-Olimpo.ogg" id="2_3cfie"]
+[ext_resource type="PackedScene" uid="uid://cbg0jou1w7gn6" path="res://assets/sprites/player.tscn" id="2_72xbu"]
+[ext_resource type="AudioStream" uid="uid://c75fjrisruuva" path="res://assets/sounds/madeira2.wav" id="3_1w4d6"]
+[ext_resource type="PackedScene" uid="uid://bhoe50588swdb" path="res://scenes/ui/Transicao.tscn" id="4_guq6g"]
+[ext_resource type="Texture2D" uid="uid://6j37b8rg2cbe" path="res://imagens/corredorescuro.jpg" id="4_xgnog"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v01rc"]
+size = Vector2(172, 19)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_guq6g"]
+a = Vector2(-709, 211)
+b = Vector2(1027, 213)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_v01rc"]
+a = Vector2(1027, -156)
+b = Vector2(1029, 214)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xgnog"]
+a = Vector2(1027, -155)
+b = Vector2(182, -158)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1w4d6"]
+a = Vector2(-711, 211)
+b = Vector2(-707, -163)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3cfie"]
+a = Vector2(-578, -122)
+b = Vector2(148, -110)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_om47b"]
+a = Vector2(-707, -169)
+b = Vector2(-580, -168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cfie"]
+size = Vector2(50, 372)
+
+[node name="corredor" type="Node2D" unique_id=940966651]
+script = ExtResource("1_xgnog")
+som_drone_vazio = ExtResource("2_3cfie")
+som_madeira_rangendo = ExtResource("3_1w4d6")
+
+[node name="Corredorescuro" type="Sprite2D" parent="." unique_id=1924637470]
+position = Vector2(871, 387.00003)
+scale = Vector2(0.6914557, 0.456057)
+texture = ExtResource("4_xgnog")
+
+[node name="Player" parent="." unique_id=1020146204 node_paths=PackedStringArray("cenario_referencia") instance=ExtResource("2_72xbu")]
+position = Vector2(67, 421)
+cenario_referencia = NodePath("../Corredorescuro")
+ativar_profundidade = true
+linha_longe_y = 0.0
+tamanho_longe = 30.0
+linha_perto_y = 1000.0
+tamanho_perto = 20.0
+
+[node name="Transicao" parent="." unique_id=1238781576 instance=ExtResource("4_guq6g")]
+position = Vector2(1040, 276)
+cena_destino = "uid://b7k3hs5ik0ctb"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Transicao" unique_id=1945409513]
+position = Vector2(8, 54.5)
+shape = SubResource("RectangleShape2D_v01rc")
+
+[node name="salaaula1" type="Marker2D" parent="." unique_id=1097981052]
+position = Vector2(1026, 330)
+
+[node name="Paredes" type="StaticBody2D" parent="." unique_id=1347771219]
+position = Vector2(712, 475)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes" unique_id=704950090]
+shape = SubResource("SegmentShape2D_guq6g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes" unique_id=1497686472]
+shape = SubResource("SegmentShape2D_v01rc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes" unique_id=621020428]
+shape = SubResource("SegmentShape2D_xgnog")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes" unique_id=1937138589]
+shape = SubResource("SegmentShape2D_1w4d6")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Paredes" unique_id=2004718010]
+shape = SubResource("SegmentShape2D_3cfie")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Paredes" unique_id=1038361047]
+shape = SubResource("SegmentShape2D_om47b")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=956667372]
+color = Color(0.06469653, 0.06469653, 0.06469653, 1)
+
+[node name="Transicao2" parent="." unique_id=256515839 instance=ExtResource("4_guq6g")]
+position = Vector2(23, 462)
+cena_destino = "uid://b7c4w1nxpbpq7"
+nome_do_spawn_destino = "porta"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Transicao2" unique_id=1277695242]
+position = Vector2(-11, 33)
+shape = SubResource("RectangleShape2D_3cfie")
+
+[node name="Transicao3" parent="." unique_id=688024961 instance=ExtResource("4_guq6g")]
+position = Vector2(550, 359)
+cena_destino = "uid://buh6dtfor3oh5"
+genero_permitido = "menino"
+frases_genero_negado = Array[String](["Humm... eu não vou entrar no banheiro masculino."])
+
+[node name="banheiroM" type="Marker2D" parent="." unique_id=1961644045]
+position = Vector2(551, 397)
+
+[node name="banheirof" type="Marker2D" parent="." unique_id=1994537456]
+position = Vector2(290, 387)
+
+[node name="Transicao4" parent="." unique_id=526364563 instance=ExtResource("4_guq6g")]
+position = Vector2(292, 351)
+cena_destino = "uid://bbdv0c36hfxdc"
+genero_permitido = "menina"
+frases_genero_negado = Array[String](["Humm... eu não deveria entrar aqui."])
+
+[node name="Transicao5" parent="." unique_id=1754127151 instance=ExtResource("4_guq6g")]
+position = Vector2(1308, 320)
+cena_destino = "uid://gyowmxgak884"
+
+[node name="Transicao6" parent="." unique_id=1581650817 instance=ExtResource("4_guq6g")]
+position = Vector2(1579, 320)
+cena_destino = "uid://femoi88y1lk5"
+
+[node name="salaaula2" type="Marker2D" parent="." unique_id=394695799]
+position = Vector2(1313, 351)
+
+[node name="salaaula3" type="Marker2D" parent="." unique_id=2061688586]
+position = Vector2(1578, 351)
+
+[node name="TimerMadeira" type="Timer" parent="." unique_id=1884948248]
+one_shot = true

@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://b421714ib5jvr"]
+
+[ext_resource type="Script" uid="uid://do58d7uoyruyd" path="res://script/itens/tela_inventario.gd" id="1_s46tr"]
+[ext_resource type="Texture2D" uid="uid://bbyxygtuxftqu" path="res://imagens/Gemini_Generated_Image_89ekeq89ekeq89ek-removebg-preview.png" id="2_f0umd"]
+[ext_resource type="Texture2D" uid="uid://s0oo6211cuu2" path="res://assets/object/freepik__2d-pixel-art-asset-of-an-open-composition-notebook__53049-removebg-preview.png" id="2_gppdv"]
+[ext_resource type="FontFile" uid="uid://b2onqkcwc5y5k" path="res://assets/fonts/Chalk-Regular.ttf" id="3_61byk"]
+[ext_resource type="Texture2D" uid="uid://b45j3c7pxqtr8" path="res://imagens/image-Photoroom__1_-removebg-preview.png" id="3_f0umd"]
+[ext_resource type="Texture2D" uid="uid://bt78cjemw7wn1" path="res://imagens/desenho.png" id="6_jeptj"]
+
+[node name="TelaInventario" type="CanvasLayer" unique_id=2043409971]
+script = ExtResource("1_s46tr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=188301177]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="GeminiGeneratedImage89Ekeq89Ekeq89EkRemovebgPreview" type="Sprite2D" parent="." unique_id=845277184]
+position = Vector2(547, 340.00003)
+scale = Vector2(1.3786231, 1.25)
+texture = ExtResource("2_f0umd")
+
+[node name="ImagePhotoroom1RemovebgPreview" type="Sprite2D" parent="." unique_id=932037017]
+position = Vector2(401.25, 290)
+scale = Vector2(1.1951671, 1.5376884)
+texture = ExtResource("3_f0umd")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1902665823]
+offset_left = 256.0
+offset_top = 180.0
+offset_right = 551.0
+offset_bottom = 440.0
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="Label" type="Label" parent="." unique_id=1239288500]
+offset_left = 343.0
+offset_top = 133.0
+offset_right = 486.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0.043137256, 0.043137256, 0.043137256, 1)
+theme_override_fonts/font = ExtResource("3_61byk")
+theme_override_font_sizes/font_size = 38
+text = "ITENS"
+
+[node name="CaixaDescricao" type="TextureRect" parent="." unique_id=290036909]
+offset_left = 1225.0
+offset_top = 376.0
+offset_right = 1489.0
+offset_bottom = 625.0
+texture = ExtResource("2_gppdv")
+expand_mode = 3
+
+[node name="NomeItemLabel" type="Label" parent="CaixaDescricao" unique_id=1198085168]
+layout_mode = 0
+offset_left = -569.0
+offset_top = -217.0
+offset_right = -468.0
+offset_bottom = -179.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_61byk")
+theme_override_font_sizes/font_size = 25
+
+[node name="TextoItemLabel" type="Label" parent="CaixaDescricao" unique_id=843261401]
+layout_mode = 0
+offset_left = -647.0
+offset_top = -162.0
+offset_right = -371.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_61byk")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="ExameNotaUI" type="Control" parent="." unique_id=1291090003]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 172.0
+offset_top = 92.0
+offset_right = 922.0
+offset_bottom = 568.0
+
+[node name="FundoEscuro" type="ColorRect" parent="ExameNotaUI" unique_id=674865545]
+layout_mode = 0
+offset_left = -169.0
+offset_top = -92.0
+offset_right = 981.0
+offset_bottom = 557.0
+color = Color(0, 0, 0, 0.18300001)
+
+[node name="ImagemNota" type="TextureRect" parent="ExameNotaUI" unique_id=500314330]
+layout_mode = 0
+offset_right = 750.0
+offset_bottom = 465.0
+texture = ExtResource("6_jeptj")
+expand_mode = 1

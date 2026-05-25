@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cbg0jou1w7gn6"]
+
+[ext_resource type="Script" uid="uid://dl4my63xd4huc" path="res://script/player.gd" id="1_onrkg"]
+[ext_resource type="SpriteFrames" uid="uid://e8mwelvmogn8" path="res://assets/sprites/anim_menina.tres" id="2_vhcws"]
+[ext_resource type="Texture2D" uid="uid://h5ts18phi35h" path="res://assets/sprites/Sem_título-removebg-preview.png" id="4_fnuoy"]
+[ext_resource type="Texture2D" uid="uid://drogqlqetud43" path="res://assets/sprites/imagem.PNG" id="4_olike"]
+[ext_resource type="Texture2D" uid="uid://bjx4qmmenvqu5" path="res://imagens/Captura de tela 2026-03-10 181644.png" id="6_vhcws"]
+[ext_resource type="PackedScene" uid="uid://b06uxpwtexn24" path="res://scenes/ui/missao_ui.tscn" id="7_vtnr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(5.500002, 3.375)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vtnr7"]
+light_mode = 1
+
+[node name="Player" type="CharacterBody2D" unique_id=1268747616]
+position = Vector2(97, 88)
+scale = Vector2(6, 6)
+script = ExtResource("1_onrkg")
+suavidade_lanterna = 10.0
+
+[node name="Anim" type="AnimatedSprite2D" parent="." unique_id=2097367582]
+position = Vector2(0.5833333, -2.8015387)
+scale = Vector2(0.018270949, 0.012107492)
+sprite_frames = ExtResource("2_vhcws")
+animation = &"walk"
+frame_progress = 0.5696975
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=977337676]
+position = Vector2(0.7499962, 0.833333)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1027123145]
+
+[node name="PivoLanterna" type="Node2D" parent="." unique_id=481373250]
+position = Vector2(0.33333334, -1.1666667)
+
+[node name="PointLight2D" type="PointLight2D" parent="PivoLanterna" unique_id=441904420]
+position = Vector2(16.390665, -0.33333355)
+scale = Vector2(0.21885537, 0.1676211)
+blend_mode = 2
+texture = ExtResource("4_olike")
+texture_scale = 0.21
+
+[node name="LuzCirculo" type="PointLight2D" parent="." unique_id=887265420]
+position = Vector2(0.41666648, -2.3750002)
+scale = Vector2(0.0149863735, 0.022540983)
+color = Color(0.8965096, 0.96148974, 0.97925526, 1)
+blend_mode = 2
+texture = ExtResource("4_fnuoy")
+
+[node name="AvisoInteracao" type="Sprite2D" parent="." unique_id=1535290618]
+material = SubResource("CanvasItemMaterial_vtnr7")
+position = Vector2(0.66666657, -7.500001)
+scale = Vector2(0.004914003, 0.0036842627)
+texture = ExtResource("6_vhcws")
+
+[node name="missao_ui" parent="." unique_id=1683177703 instance=ExtResource("7_vtnr7")]

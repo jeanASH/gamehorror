@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://buh6dtfor3oh5"]
+
+[ext_resource type="Script" uid="uid://bhtl5ajea5utd" path="res://script/banheiro_m.gd" id="1_b2hwo"]
+[ext_resource type="Texture2D" uid="uid://cce4iqblvyr6u" path="res://imagens/banheiro.png" id="1_jmh25"]
+[ext_resource type="AudioStream" uid="uid://h3bly0so0k22" path="res://assets/sounds/som-do-banheiro.ogg" id="2_jwn5g"]
+[ext_resource type="PackedScene" uid="uid://cbg0jou1w7gn6" path="res://assets/sprites/player.tscn" id="2_o43v4"]
+[ext_resource type="PackedScene" uid="uid://bhoe50588swdb" path="res://scenes/ui/Transicao.tscn" id="3_b2hwo"]
+[ext_resource type="PackedScene" uid="uid://himfcg14ppfc" path="res://scenes/ui/mochila/item_base.tscn" id="6_yhg76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwn5g"]
+size = Vector2(84, 332)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yhg76"]
+a = Vector2(105, 330)
+b = Vector2(-237, 328)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cr2ec"]
+a = Vector2(360, 375)
+b = Vector2(128, 374)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fiow4"]
+a = Vector2(726, 331)
+b = Vector2(382, 331)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yh13c"]
+a = Vector2(723, -64)
+b = Vector2(728, 318)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_58ylj"]
+a = Vector2(287, -49)
+b = Vector2(719, -44)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7td1d"]
+a = Vector2(284, -48)
+b = Vector2(286, -283)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_s8k8h"]
+a = Vector2(-203, -269)
+b = Vector2(271, -267)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_e517l"]
+a = Vector2(-202, -279)
+b = Vector2(-217, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0gy"]
+size = Vector2(72, 159)
+
+[node name="banheiroM" type="Node2D" unique_id=1657703822]
+script = ExtResource("1_b2hwo")
+banheiro = ExtResource("2_jwn5g")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=868738870]
+offset_left = -197.0
+offset_right = 1508.0
+offset_bottom = 1415.0
+color = Color(0.00069389754, 0.00069389766, 0.0006938976, 1)
+
+[node name="Banheiro" type="Sprite2D" parent="." unique_id=789977971]
+position = Vector2(508, 509)
+texture = ExtResource("1_jmh25")
+
+[node name="Player" parent="." unique_id=1415000769 node_paths=PackedStringArray("cenario_referencia") instance=ExtResource("2_o43v4")]
+position = Vector2(499, 824)
+cenario_referencia = NodePath("../Banheiro")
+ativar_profundidade = true
+linha_longe_y = 0.0
+tamanho_longe = 20.0
+linha_perto_y = 1020.0
+tamanho_perto = 20.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1548508270]
+color = Color(0.15487596, 0.154876, 0.1548759, 1)
+
+[node name="Transicao" parent="." unique_id=1796752357 instance=ExtResource("3_b2hwo")]
+position = Vector2(515, 922)
+cena_destino = "uid://daeth0wofotru"
+nome_do_spawn_destino = "banheiroM"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1236827548]
+position = Vector2(274, 586)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1054203362]
+position = Vector2(-209, 153)
+shape = SubResource("RectangleShape2D_jwn5g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=725178859]
+shape = SubResource("SegmentShape2D_yhg76")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=69209295]
+shape = SubResource("SegmentShape2D_cr2ec")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=739630233]
+shape = SubResource("SegmentShape2D_fiow4")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1487749662]
+shape = SubResource("SegmentShape2D_yh13c")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=687598329]
+shape = SubResource("SegmentShape2D_58ylj")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=821434577]
+shape = SubResource("SegmentShape2D_7td1d")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1507159565]
+shape = SubResource("SegmentShape2D_s8k8h")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=784676785]
+shape = SubResource("SegmentShape2D_e517l")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=2116488863]
+position = Vector2(687, 253.5)
+shape = SubResource("RectangleShape2D_bg0gy")
+
+[node name="ItemBase" parent="." unique_id=955828673 instance=ExtResource("6_yhg76")]
+position = Vector2(334, 315)
+id_unico_do_item = "fita"
+nome_no_inventario = "fita"
+frases_ao_pegar = Array[String](["Humm o vidro ta meio torto ? o que tem aqui atras ?", "\"Você achou uma fita.\""])

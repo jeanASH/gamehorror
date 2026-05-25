@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b06uxpwtexn24"]
+
+[ext_resource type="Script" uid="uid://dvsvjqawbt4td" path="res://script/missao_ui.gd" id="1_pqyi7"]
+[ext_resource type="FontFile" uid="uid://b2onqkcwc5y5k" path="res://assets/fonts/Chalk-Regular.ttf" id="2_oomv8"]
+
+[node name="missao_ui" type="CanvasLayer" unique_id=931398871]
+script = ExtResource("1_pqyi7")
+
+[node name="Label" type="Label" parent="." unique_id=177925201]
+offset_left = 17.0
+offset_top = 28.0
+offset_right = 180.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("2_oomv8")
+theme_override_font_sizes/font_size = 14

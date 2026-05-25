@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://cghsijsr1ucxm"]
+
+[ext_resource type="Script" uid="uid://baiu2sap5y7u1" path="res://script/biblioteca_exterior.gd" id="1_fmjgw"]
+[ext_resource type="AudioStream" uid="uid://wel0rrcwwj18" path="res://assets/sounds/som de efeito - Floresta (grilos).wav" id="2_357ob"]
+[ext_resource type="PackedScene" uid="uid://cbg0jou1w7gn6" path="res://assets/sprites/player.tscn" id="2_ou6df"]
+[ext_resource type="Texture2D" uid="uid://b44vjg5ik3w7s" path="res://imagens/bibliotecaescuro.png" id="3_357ob"]
+[ext_resource type="PackedScene" uid="uid://bhoe50588swdb" path="res://scenes/ui/Transicao.tscn" id="3_ou6df"]
+[ext_resource type="PackedScene" uid="uid://s0ict3cidpv6" path="res://scenes/ui/transicaofluida.tscn" id="4_ajosv"]
+[ext_resource type="PackedScene" uid="uid://0k51mcw64r76" path="res://scenes/levels/terrafofa.tscn" id="8_hansr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvvjt"]
+size = Vector2(1297, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmjgw"]
+size = Vector2(19, 124)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ajosv"]
+a = Vector2(-22, 850)
+b = Vector2(-25, -16)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gvvjt"]
+a = Vector2(-372, -24)
+b = Vector2(18, -10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmjgw"]
+radius = 15.033297
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_357ob"]
+radius = 15.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hansr"]
+a = Vector2(734, 419)
+b = Vector2(518, 418)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_are37"]
+a = Vector2(1270, 707)
+b = Vector2(1271, 10)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hjukv"]
+a = Vector2(947, 418)
+b = Vector2(753, 420)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ssduw"]
+a = Vector2(194, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd6a3"]
+size = Vector2(38, 65)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_357ob"]
+radius = 1.0
+height = 102.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_357ob"]
+a = Vector2(-23, -16)
+b = Vector2(1268, -14)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kd6a3"]
+a = Vector2(90, 172)
+b = Vector2(87, 400)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_htul6"]
+a = Vector2(1132, 168)
+b = Vector2(100, 164)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m4c0b"]
+a = Vector2(1146, 171)
+b = Vector2(1140, 438)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6hr4v"]
+a = Vector2(1084, 113)
+b = Vector2(242, 109)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_55shw"]
+a = Vector2(235, 121)
+b = Vector2(216, 166)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lkxr3"]
+a = Vector2(1084, 121)
+b = Vector2(1105, 167)
+
+[node name="BibliotecaExterior" type="Node2D" unique_id=233257954]
+script = ExtResource("1_fmjgw")
+som_da_floresta = ExtResource("2_357ob")
+
+[node name="Bibliotecaescuro" type="Sprite2D" parent="." unique_id=1508392626]
+position = Vector2(633, 421.5)
+scale = Vector2(0.50712025, 0.51840854)
+texture = ExtResource("3_357ob")
+
+[node name="transicaofluida" parent="." unique_id=1028968202 instance=ExtResource("4_ajosv")]
+position = Vector2(623, 840)
+cena_destino = "uid://btjf3w5xmksu6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transicaofluida" unique_id=684453913]
+position = Vector2(2.5, 7)
+shape = SubResource("RectangleShape2D_gvvjt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="transicaofluida" unique_id=1774208180]
+position = Vector2(-635.5, -72)
+shape = SubResource("RectangleShape2D_fmjgw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="transicaofluida" unique_id=332879129]
+position = Vector2(642, -68)
+shape = SubResource("RectangleShape2D_fmjgw")
+
+[node name="Parede" type="StaticBody2D" parent="." unique_id=68306534]
+position = Vector2(5, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede" unique_id=662817807]
+shape = SubResource("SegmentShape2D_ajosv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Parede" unique_id=1618416323]
+position = Vector2(470, 431)
+shape = SubResource("SegmentShape2D_gvvjt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Parede" unique_id=1154086732]
+position = Vector2(504, 422)
+shape = SubResource("CircleShape2D_fmjgw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Parede" unique_id=983750537]
+position = Vector2(750, 420)
+shape = SubResource("CircleShape2D_357ob")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Parede" unique_id=802891341]
+position = Vector2(3, 5)
+shape = SubResource("SegmentShape2D_hansr")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Parede" unique_id=663668907]
+shape = SubResource("SegmentShape2D_are37")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Parede" unique_id=1555096399]
+shape = SubResource("SegmentShape2D_hjukv")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Parede" unique_id=880740392]
+position = Vector2(947, 407)
+shape = SubResource("SegmentShape2D_ssduw")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Parede" unique_id=95780363]
+position = Vector2(816, 601.5)
+shape = SubResource("RectangleShape2D_kd6a3")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Parede" unique_id=1207862606]
+position = Vector2(959, 546)
+shape = SubResource("CapsuleShape2D_357ob")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Parede" unique_id=412510766]
+shape = SubResource("SegmentShape2D_357ob")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Parede" unique_id=1821252528]
+position = Vector2(0, -1)
+shape = SubResource("SegmentShape2D_kd6a3")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Parede" unique_id=401171540]
+shape = SubResource("SegmentShape2D_htul6")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Parede" unique_id=1631703703]
+shape = SubResource("SegmentShape2D_m4c0b")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Parede" unique_id=1502392938]
+shape = SubResource("SegmentShape2D_6hr4v")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Parede" unique_id=1576898687]
+shape = SubResource("SegmentShape2D_55shw")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Parede" unique_id=1494347699]
+shape = SubResource("SegmentShape2D_lkxr3")
+
+[node name="entradaB" type="Marker2D" parent="." unique_id=1880453323]
+position = Vector2(636, 442)
+
+[node name="GeminiGeneratedImageI7Cz1Zi7Cz1Zi7Cz2" type="Sprite2D" parent="." unique_id=1752624959]
+visible = false
+position = Vector2(2740, 1676)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2051831821]
+position = Vector2(51, 130)
+color = Color(0.94428116, 0.94428116, 0.94428116, 1)
+
+[node name="Transicao" parent="." unique_id=808252562 instance=ExtResource("3_ou6df")]
+position = Vector2(636, 431)
+cena_destino = "uid://d3jld4hq8ahe2"
+
+[node name="terrafofa" parent="." unique_id=1429523805 instance=ExtResource("8_hansr")]
+position = Vector2(639, 52)
+
+[node name="Player" parent="." unique_id=1653060279 node_paths=PackedStringArray("cenario_referencia") instance=ExtResource("2_ou6df")]
+position = Vector2(610, 776)
+cenario_referencia = NodePath("../Bibliotecaescuro")
+ativar_profundidade = true
+linha_longe_y = 400.0
+tamanho_longe = 10.0
+linha_perto_y = 1000.0
+tamanho_perto = 20.0

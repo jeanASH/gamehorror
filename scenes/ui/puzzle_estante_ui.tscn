@@ -1,0 +1,127 @@
+[gd_scene load_steps=4 format=3 uid="uid://t01ix87lfotk"]
+
+[ext_resource type="Script" uid="uid://pssw122cwtf8" path="res://script/puzzle/puzzle_estante_ui.gd" id="1_rnmqk"]
+[ext_resource type="Texture2D" uid="uid://bxsd4v168qwe5" path="res://imagens/estante.jpeg" id="2_btjdj"]
+[ext_resource type="Texture2D" uid="uid://b1ypykcogdxl8" path="res://imagens/livro_base.png" id="3_8c27p"]
+
+[node name="PuzzleEstanteUI" type="CanvasLayer"]
+script = ExtResource("1_rnmqk")
+
+[node name="FundoEstante" type="TextureRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 652.0
+texture = ExtResource("2_btjdj")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 494.0
+offset_top = 460.0
+offset_right = 1107.0
+offset_bottom = 640.0
+
+[node name="2" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_8c27p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/2"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 27.0
+offset_right = 26.0
+offset_bottom = 50.0
+text = "2"
+
+[node name="5" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_8c27p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/5"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 28.0
+offset_right = 40.0
+offset_bottom = 51.0
+text = "5"
+
+[node name="7" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_8c27p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/7"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 27.0
+offset_right = 40.0
+offset_bottom = 50.0
+text = "7"
+
+[node name="4" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_8c27p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/4"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 27.0
+offset_right = 40.0
+offset_bottom = 51.0
+text = "4"
+
+[node name="1" type="TextureButton" parent="HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(40, 180)
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("3_8c27p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/1"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 27.0
+offset_right = 32.0
+offset_bottom = 50.0
+text = "1"
+
+[node name="6" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_8c27p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/6"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 26.0
+offset_right = 40.0
+offset_bottom = 49.0
+text = "6"
+
+[node name="3" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_8c27p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/3"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 27.0
+offset_right = 40.0
+offset_bottom = 50.0
+text = "3"

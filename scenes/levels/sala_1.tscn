@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://dntd6vfhav34e"]
+
+[ext_resource type="Script" uid="uid://du4rwuyjg15ek" path="res://script/horror_eyes_manage.gd" id="1_jymoc"]
+[ext_resource type="PackedScene" uid="uid://cbg0jou1w7gn6" path="res://assets/sprites/player.tscn" id="2_dxpu3"]
+[ext_resource type="AudioStream" uid="uid://dje5vlry8nxiq" path="res://assets/sounds/vozes.ogg" id="3_2gfqs"]
+[ext_resource type="PackedScene" uid="uid://bhoe50588swdb" path="res://scenes/ui/Transicao.tscn" id="3_qwheg"]
+[ext_resource type="Texture2D" uid="uid://bnvum0o6qugew" path="res://imagens/sala1escuro.jpg" id="4_iloig"]
+[ext_resource type="Texture2D" uid="uid://byt5gm2fof07e" path="res://imagens/Captura de tela 2026-04-13 002555.png" id="4_qwheg"]
+[ext_resource type="PackedScene" uid="uid://himfcg14ppfc" path="res://scenes/ui/mochila/item_base.tscn" id="8_t1i66"]
+[ext_resource type="Texture2D" uid="uid://cggl0tmx4r0nw" path="res://imagens/laço.png" id="9_absa4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2gfqs"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7axwh"]
+light_mode = 1
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jymoc"]
+a = Vector2(292, 117)
+b = Vector2(97, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7axwh"]
+size = Vector2(149, 29)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2gfqs"]
+a = Vector2(-15, -242)
+b = Vector2(-14, 79)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_iloig"]
+a = Vector2(-10, -244)
+b = Vector2(404, -239)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1i66"]
+size = Vector2(130, 163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_absa4"]
+size = Vector2(29, 89)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7axwh"]
+a = Vector2(35, -182)
+b = Vector2(-34, -185)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jymoc"]
+size = Vector2(70, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxcgy"]
+size = Vector2(52, 74)
+
+[node name="Sala1" type="Node2D" unique_id=928933820]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1335580834]
+visible = false
+material = SubResource("CanvasItemMaterial_2gfqs")
+offset_left = -323.0
+offset_top = -4.0
+offset_right = 840.0
+offset_bottom = 699.0
+color = Color(0, 0, 0, 1)
+
+[node name="HorrorEyesManage" type="Node2D" parent="." unique_id=1639708811 node_paths=PackedStringArray("color_rect_fundo")]
+material = SubResource("CanvasItemMaterial_7axwh")
+script = ExtResource("1_jymoc")
+sprite_olho = ExtResource("4_qwheg")
+chance_de_aparecer = 1.0
+color_rect_fundo = NodePath("../ColorRect")
+
+[node name="vozes" type="AudioStreamPlayer" parent="HorrorEyesManage" unique_id=1639775741]
+stream = ExtResource("3_2gfqs")
+bus = &"Musica"
+
+[node name="Sala1Escuro" type="Sprite2D" parent="." unique_id=411319488]
+position = Vector2(251.5, 347)
+scale = Vector2(0.2806713, 0.28949547)
+texture = ExtResource("4_iloig")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Sala1Escuro" unique_id=786372073]
+visible = false
+position = Vector2(-1.7814941, -5.1813965)
+scale = Vector2(1.0680413, 1.0071427)
+color = Color(0.2123048, 0.21230483, 0.21230477, 1)
+
+[node name="Transicao" parent="." unique_id=989364036 instance=ExtResource("3_qwheg")]
+position = Vector2(252, 693)
+cena_destino = "uid://d3jld4hq8ahe2"
+nome_do_spawn_destino = "sala1"
+
+[node name="Parede" type="StaticBody2D" parent="." unique_id=2145061548]
+position = Vector2(59, 576)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede" unique_id=2091196411]
+position = Vector2(1, 7)
+shape = SubResource("SegmentShape2D_jymoc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Parede" unique_id=545177103]
+position = Vector2(2, 106)
+shape = SubResource("RectangleShape2D_7axwh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Parede" unique_id=361011287]
+position = Vector2(385, 102)
+shape = SubResource("RectangleShape2D_7axwh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Parede" unique_id=972563461]
+position = Vector2(-20, -1)
+shape = SubResource("SegmentShape2D_2gfqs")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Parede" unique_id=900951533]
+position = Vector2(443, 6)
+shape = SubResource("SegmentShape2D_2gfqs")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Parede" unique_id=1321421509]
+shape = SubResource("SegmentShape2D_iloig")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Parede" unique_id=1349402364]
+position = Vector2(221, -146.5)
+shape = SubResource("RectangleShape2D_t1i66")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Parede" unique_id=629790735]
+position = Vector2(320.5, -172.5)
+shape = SubResource("RectangleShape2D_absa4")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Parede" unique_id=649975107]
+position = Vector2(118, -172)
+shape = SubResource("RectangleShape2D_absa4")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Parede" unique_id=810884657]
+position = Vector2(5, -11)
+shape = SubResource("SegmentShape2D_7axwh")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Parede" unique_id=265880272]
+position = Vector2(25, 70)
+shape = SubResource("RectangleShape2D_jymoc")
+
+[node name="ItemBase" parent="." unique_id=1090123995 instance=ExtResource("8_t1i66")]
+position = Vector2(324, 465)
+id_unico_do_item = "laço"
+nome_no_inventario = "laço"
+imagem_do_item = ExtResource("9_absa4")
+tamanho_da_imagem = Vector2(0.05, 0.05)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ItemBase" unique_id=1357414616]
+position = Vector2(16, 27)
+shape = SubResource("RectangleShape2D_sxcgy")
+
+[node name="Player" parent="." unique_id=569293458 node_paths=PackedStringArray("cenario_referencia") instance=ExtResource("2_dxpu3")]
+position = Vector2(252, 634)
+cenario_referencia = NodePath("../Sala1Escuro")
+ativar_profundidade = true
+linha_longe_y = 350.0
+tamanho_longe = 16.0
+linha_perto_y = 700.0
+tamanho_perto = 15.0
